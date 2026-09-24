@@ -18,18 +18,58 @@
     --curva-card: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+html, body {
+    height: 100%;
+}
+
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
     background-color: var(--bege);
     color: var(--texto-escuro);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .cabecalho {
     background-color: var(--verde);
     color: white;
-    text-align: center;
-    padding: 48px 20px;
+    padding: 30px 20px;
     border-bottom: 4px solid var(--vermelho);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+}
+
+.titulo-grupo {
+    text-align: center;
+}
+
+/* Telas bem estreitas (celulares pequenos) */
+@media (max-width: 480px) {
+    .cabecalho {
+        flex-direction: column;
+        gap: 10px;
+        padding: 25px 15px;
+    }
+
+    .cabecalho h1 {
+        font-size: 1.8em;
+    }
+
+    .logo {
+        width: 60px;
+        height: 60px;
+    }
 }
 
 .cabecalho h1 {
@@ -99,6 +139,8 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
+    flex: 1;
+    align-content: start;
 }
 
 /* =========================
@@ -234,4 +276,45 @@ DESKTOP
     font-weight: bold;
     color: var(--vermelho);
     font-size: 1.1rem;
+}
+
+.rodape {
+    background-color: var(--verde);
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 40px;
+    border-top: 4px solid var(--vermelho);
+}
+
+.rodape h3 {
+    font-family: 'Lobster Two', cursive;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.rodape p {
+    font-size: 0.95rem;
+    margin: 4px 0;
+}
+
+.redes-sociais {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.redes-sociais a {
+    color: white;
+    text-decoration: none;
+    border: 2px solid white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+.redes-sociais a:hover {
+    background-color: rgba(255, 255,255, 0.15);
 }
